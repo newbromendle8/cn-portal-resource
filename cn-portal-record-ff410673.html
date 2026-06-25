@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>再次遇见 · v体育 博客式介绍</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: #f4f1ed;
+            color: #1d1f27;
+            line-height: 1.7;
+            font-size: 16px;
+        }
+
+        .header-hero {
+            background: #0b1a2b;
+            background-image: radial-gradient(circle at 20% 30%, #1d3b4f 0%, #0b1a2b 90%);
+            color: #e3e8ed;
+            padding: 5rem 2rem 4rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header-hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background: linear-gradient(90deg, #4b7a9c, #9ec4d9, #4b7a9c);
+        }
+
+        .hero-label {
+            display: inline-block;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.04);
+            padding: 0.4rem 1.2rem;
+            border-radius: 40px;
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #b0c9da;
+            margin-bottom: 1.8rem;
+        }
+
+        .hero-title {
+            font-size: 2.6rem;
+            font-weight: 550;
+            letter-spacing: -0.02em;
+            max-width: 18em;
+            margin: 0 auto 0.8rem auto;
+            line-height: 1.2;
+        }
+
+        .hero-title em {
+            font-style: normal;
+            color: #b4d7f0;
+        }
+
+        .hero-sub {
+            font-size: 1rem;
+            max-width: 30rem;
+            margin: 0 auto;
+            color: #b3c7d8;
+            font-weight: 300;
+        }
+
+        .container {
+            max-width: 780px;
+            margin: 0 auto;
+            padding: 0 1.8rem;
+        }
+
+        article {
+            padding: 3.4rem 0 4rem 0;
+        }
+
+        h2 {
+            font-size: 1.7rem;
+            font-weight: 500;
+            margin-top: 2.6rem;
+            margin-bottom: 1rem;
+            color: #142433;
+            letter-spacing: -0.01em;
+            border-left: 4px solid #3c6e8c;
+            padding-left: 1rem;
+        }
+
+        h2:first-of-type {
+            margin-top: 0;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            font-weight: 380;
+        }
+
+        .intro-quote {
+            font-size: 1.1rem;
+            background: #eae5de;
+            padding: 1.8rem 2rem;
+            border-radius: 12px;
+            margin: 2rem 0 2.2rem 0;
+            border-left: 4px solid #3c6e8c;
+            font-style: normal;
+            color: #1d2a38;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.02);
+        }
+
+        .intro-quote strong {
+            font-weight: 550;
+            color: #1a3b4f;
+        }
+
+        a {
+            color: #236a8a;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.15s, color 0.15s;
+            font-weight: 450;
+        }
+
+        a:hover {
+            color: #0b3c55;
+            border-bottom: 1px solid #236a8a;
+        }
+
+        .insight-card {
+            background: white;
+            border-radius: 18px;
+            padding: 1.8rem 2rem;
+            margin: 2.4rem 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02), 0 1px 3px rgba(0, 0, 0, 0.03);
+        }
+
+        .insight-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .insight-label {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            color: #6e7f8d;
+            text-transform: uppercase;
+            margin-bottom: 0.4rem;
+        }
+
+        .faq-mini {
+            margin: 2.8rem 0 2rem 0;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #dbd5cb;
+            padding: 1.2rem 0;
+        }
+
+        .faq-item:first-of-type {
+            border-top: 1px solid #dbd5cb;
+        }
+
+        .faq-q {
+            font-weight: 550;
+            font-size: 1rem;
+            color: #1c2e3d;
+            margin-bottom: 0.3rem;
+        }
+
+        .faq-a {
+            color: #3d4b58;
+            font-size: 0.95rem;
+            margin-left: 0.2rem;
+        }
+
+        .visit-remark {
+            background: #e8e2d9;
+            padding: 2rem 2rem;
+            border-radius: 24px;
+            margin: 3rem 0 1.8rem 0;
+            text-align: center;
+        }
+
+        .visit-remark p {
+            margin-bottom: 0.2rem;
+            font-size: 1.05rem;
+        }
+
+        .fine-print {
+            border-top: 1px solid #d3ccc2;
+            padding: 2rem 0 3rem 0;
+            margin-top: 2rem;
+            font-size: 0.85rem;
+            color: #5f6b78;
+            text-align: center;
+        }
+
+        .fine-print a {
+            color: #3e5f74;
+            border-bottom: none;
+        }
+
+        @media (max-width: 600px) {
+            .header-hero {
+                padding: 3.6rem 1.2rem 3rem 1.2rem;
+            }
+
+            .hero-title {
+                font-size: 1.9rem;
+            }
+
+            .container {
+                padding: 0 1.2rem;
+            }
+
+            h2 {
+                font-size: 1.4rem;
+                padding-left: 0.8rem;
+            }
+
+            .intro-quote {
+                padding: 1.2rem 1.4rem;
+                font-size: 1rem;
+            }
+
+            .insight-card {
+                padding: 1.4rem 1.2rem;
+            }
+
+            .visit-remark {
+                padding: 1.6rem 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="header-hero">
+    <span class="hero-label">· 持续关注 ·</span>
+    <h1 class="hero-title">再次访问 <em>v体育</em>，<br>一种信息节奏的选择</h1>
+    <p class="hero-sub">不追逐瞬时热点，只沉淀值得回看的竞技叙事。</p>
+</div>
+
+<article>
+    <div class="container">
+
+        <p style="margin-top: 0.2rem;">
+            当一个平台值得被收藏，通常是因为它提供了某种稳定的信息质感。对于关注竞技体育的读者来说，<a href="https://cn-portal-vsports.com">v体育</a> 正是这样一个可以反复进入、从容阅读的所在。这里没有过载的弹窗与冗余推送，内容组织更接近一本持续更新的运动日志。
+        </p>
+
+        <div class="intro-quote">
+            <strong>关于“再次访问”这件事</strong> —— 浏览器的书签栏里，有些链接是工具，有些则是方向。把 v体育 加入收藏，不只是保存一个网址，更是为自己保留一个从运动角度理解世界的固定入口。
+        </div>
+
+        <p>
+            从赛事分析到运动员深度访谈，从战术演变到体育文化拆解，<a href="https://cn-portal-vsports.com">v体育</a> 的内容跨度允许读者按自己的兴趣曲线来回切换。专栏作者群像中既有资深解说员，也有数据研究者，他们提供的视角往往能够延展比赛回放之外的认知层次。
+        </p>
+
+        <h2>为什么值得持续关注</h2>
+
+        <p>
+            信息消费的疲劳往往来自同质化。而 v体育 在选题上刻意避开短时流量陷阱，更愿意花篇幅去还原一个战术体系的演变，或是一段被遗忘的体育史。这种内容密度，恰好适合那些希望在碎片时间里获得深度阅读体验的人。
+        </p>
+
+        <p>
+            另一个容易被忽略的细节是站内的归档逻辑。按赛季、联赛、人物三条线索交叉索引，使得回溯往期内容变得相当直接——这在一定程度上降低了信息沉淀的成本，也让“再次访问”这个动作有了实际意义。
+        </p>
+
+        <div class="insight-card">
+            <span class="insight-label">┃ 信息习惯观察</span>
+            <p>收藏一个站点，本质上是在构建私人信息回路。当你习惯性打开 <a href="https://cn-portal-vsports.com">v体育</a> 并浏览最新几篇文章，那种不需要重新适应界面与语感的体验，本身就是一种认知节能。</p>
+        </div>
+
+        <h2>适合怎样的阅读场景</h2>
+
+        <p>
+            晨间通勤时扫读赛前简报，午休时打开一篇人物特写，晚间复盘时参考深度分析——v体育 的内容节奏几乎可以无缝嵌入日常间隙。更重要的是，文章之间没有强关联依赖，随便点开一篇都能独立阅读，这大大降低了“从哪开始”的心理门槛。
+        </p>
+
+        <p>
+            对于有固定关注联赛或项目的用户，订阅特定标签后，首页会优先展示相关更新。这种轻度个性化，让每次回访都更贴近个人兴趣轴线。
+        </p>
+
+        <!-- FAQ 摘要 -->
+        <div class="faq-mini">
+            <h2 style="border-left-color: #8aaec2;">常见疑问摘要</h2>
+
+            <div class="faq-item">
+                <div class="faq-q">是否需要注册才能阅读全部内容？</div>
+                <div class="faq-a">大部分文章无需登录即可阅读。部分深度系列或历史数据库可能需要轻量注册，注册过程仅需邮箱，无冗余验证。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q">移动端阅读体验如何？</div>
+                <div class="faq-a">页面采用响应式布局，在手机浏览器中排版自动适配，字体大小与间距经过专门调整，阅读时无需频繁缩放。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q">内容更新频率大概是？</div>
+                <div class="faq-a">保持每周 3–5 篇原创，重大赛事期间会增加赛评与数据复盘，更新节奏稳定，可预测性强。</div>
+            </div>
+        </div>
+
+        <div class="visit-remark">
+            <p style="font-weight: 450;">将 <a href="https://cn-portal-vsports.com" style="border-bottom: 1px dotted #236a8a;">v体育</a> 放入书签栏，</p>
+            <p style="font-size: 0.95rem; color: #364652;">下一次想看比赛之外的东西时，自然就会点开。</p>
+        </div>
+
+    </div>
+</article>
+
+<div class="fine-print">
+    <div class="container">
+        <span>简洁博客式 · 持续关注 · 信息密度优先</span><br>
+        <span style="opacity: 0.65;">内容沉淀于 <a href="https://cn-portal-vsports.com">v体育</a>  · 保持回访习惯</span>
+    </div>
+</div>
+
+</body>
+</html>
